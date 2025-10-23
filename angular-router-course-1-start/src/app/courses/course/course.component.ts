@@ -18,6 +18,9 @@ export class CourseComponent implements OnInit {
     this.course = this.route.snapshot.data['course'];
   }
 
+  confirmExit() {
+    confirm('Are you sure you want to leave this page? Unsaved changes will be lost.');
+  }
 
 }
 
