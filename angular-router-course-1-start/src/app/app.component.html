@@ -4,7 +4,10 @@
 
     <div class="toolbar-tools" routerLinkActive="menu-item-active">
 
-      <a class="menu-item" mat-button [routerLink]="'courses'" routerLinkActive="menu-item-active">
+      <a class="menu-item" mat-button [routerLink]="'courses'" routerLinkActive="menu-item-active"
+        [routerLinkActiveOptions]="{
+        exact: true
+      }">
         <span>Courses</span>
       </a>
 
@@ -12,10 +15,7 @@
         <span>About</span>
       </a>
 
-      <a mat-button
-        class="menu-item"
-        [routerLink]="'login'"
-        *ngIf="auth.isLoggedOut$ | async"
+      <a mat-button class="menu-item" [routerLink]="'login'" *ngIf="auth.isLoggedOut$ | async"
         routerLinkActive="menu-item-active">
         <mat-icon>account_circle</mat-icon>
         <span>Login</span>
@@ -52,4 +52,3 @@
   <router-outlet></router-outlet>
 
 </mat-sidenav-container>
-
