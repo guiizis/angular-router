@@ -1,21 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
 import { Router } from "@angular/router";
 
 @Component({
-    selector: 'chat',
-    templateUrl: './chat.component.html',
-    styleUrls: ['./chat.component.css'],
-    standalone: false
+  selector: 'chat',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.css'],
+  standalone: false,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  private router = inject(Router);
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  closeChat() {
-    this.router.navigate([{ outlets: { chat: null }}]);
+  closeChat(): void {
+    this.router.navigate([{ outlets: { chat: null } }]);
   }
 
 }
