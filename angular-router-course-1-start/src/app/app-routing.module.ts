@@ -46,7 +46,9 @@ const routes: Routes = [
     RouterModule.forRoot(
       routes, {
         preloadingStrategy: CustomPreloadingStrategy,
-        enableTracing: false
+        enableTracing: false,
+        scrollPositionRestoration: 'enabled',
+        paramsInheritanceStrategy: 'always'
       }
     )
   ],

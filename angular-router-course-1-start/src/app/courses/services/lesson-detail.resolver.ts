@@ -11,7 +11,7 @@ export class LessonDetailResolver implements Resolve<LessonDetail> {
   constructor(private courseService: CoursesService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<LessonDetail> {
-    return this.courseService.loadLessonDetail(route.parent.params['courseUrl'], route.params['lessonSeqNo']).pipe(
+    return this.courseService.loadLessonDetail(route.params['courseUrl'], route.params['lessonSeqNo']).pipe(
       first()
     );
   }
