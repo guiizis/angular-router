@@ -45,7 +45,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(
       routes, {
-        preloadingStrategy: CustomPreloadingStrategy
+        preloadingStrategy: CustomPreloadingStrategy,
+        enableTracing: false
       }
     )
   ],
